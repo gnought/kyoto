@@ -7,7 +7,7 @@ PREFIX ?= /usr/local
 DESTDIR =
 OS := $(shell uname -s)
 NPROCS = 1
-CONFIG_FLAGS =
+CONFIG_FLAGS ?=
 
 
 # Parallelize the build on Linux...
