@@ -67,7 +67,7 @@ kyotocabinet/libkyotocabinet.$(SO_EXTENSION): cabinet
 kyototycoon/Makefile: kyotocabinet/libkyotocabinet.a kyotocabinet/libkyotocabinet.$(SO_EXTENSION)
 	$(eval CABINET_ROOT := $(shell awk '/^prefix *=/ {print $$3}' kyotocabinet/Makefile))
 	test -x kyototycoon/configure && cd kyototycoon && \
-	PKG_CONFIG_PATH="../kyotocabinet" CPPFLAGS="-I../kyotocabinet" LDFLAGS="-L../kyotocabinet" \
+	PKG_CONFIG_PATH="../kyotocabinet" CPPFLAGS="-I../kyotocabinet $(CPPFLAGS)" LDFLAGS="-L../kyotocabinet $(LDFLAGS)" \
 	./configure --prefix="$(PREFIX)" --with-kc="$(CABINET_ROOT)" --enable-lua $(CONFIG_FLAGS)
 
 tycoon: kyototycoon/Makefile
