@@ -2275,7 +2275,8 @@ then
                     /usr/local/include/lua-5.1 \
                     /usr/local/include/lua51 \
                     /usr/include/lua \
-                    /usr/local/include/lua
+                    /usr/local/include/lua \
+                    /usr/local/include/luajit-2.1
   do
     if test -e $luaincpath
     then
@@ -2292,7 +2293,8 @@ then
                     /usr/local/lib/lua-5.1 \
                     /usr/local/lib/lua51 \
                     /usr/lib/lua \
-                    /usr/local/lib/lua
+                    /usr/local/lib/lua \
+                    /usr/local/lib/luajit-2.1
   do
     if test -e $lualibpath
     then
@@ -4019,7 +4021,7 @@ fi
 
 if test "$enable_lua" = "yes"
 then
-  for lualib in lua5.1 lua-5.1 lua51 lua
+  for lualib in lua5.1 lua-5.1 lua51 lua luajit-5.1
   do
     as_ac_Lib=`$as_echo "ac_cv_lib_$lualib''_main" | $as_tr_sh`
 { $as_echo "$as_me:${as_lineno-$LINENO}: checking for main in -l$lualib" >&5
